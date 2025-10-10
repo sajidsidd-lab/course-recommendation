@@ -11,7 +11,13 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div className="login-container">
+   <div className="hero-container">
+  <div className="hero-content">
+     <img src="/logo.png" alt="Course Recommendor Logo" className="logo" />
+
+    <h1 className="app-title">Course-Recommendor</h1>
+    <p className="tagline">Find the perfect course for your goals</p>
+    <div className="login-box">
       <h2>Login</h2>
       <input
         type="text"
@@ -19,7 +25,11 @@ export default function Login({ onLogin }) {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin} disabled={loading}>
+        {loading ? "Logging in..." : "Login"}
+      </button>
     </div>
+  </div>
+</div>
   );
 }
