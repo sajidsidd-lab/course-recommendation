@@ -29,6 +29,9 @@ export default function Login({ onLogin }) {
         {loading ? "Logging in..." : "Login"}
       </button>
     </div>
+    <div className="footer">
+  <p>Created by Sajid Raza</p>
+</div>
   </div>
 </div>
   );
