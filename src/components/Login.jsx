@@ -4,9 +4,10 @@ import  '../Login.css'
 
 export default function Login({ onLogin }) {
   const [username, setUsername] = useState("");
-   const [loading, setLoading] = useState(false);
+   
 
   const handleLogin = () => {
+    
     if (username.trim()) onLogin(username);
   };
 

@@ -49,3 +49,13 @@
   margin-bottom: 0.5rem;
   display: inline-block;
 }
+.course-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.course-links a:hover {
+  text-decoration: underline;
+}
