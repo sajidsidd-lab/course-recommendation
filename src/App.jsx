@@ -5,6 +5,8 @@ import Login from "./components/Login";
 import CourseForm from "./components/CourseForm";
 import "./RecommendedCourse.css"
 import "./CourseCard.css"
+import Navbar from "./components/Navbar";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -70,6 +72,14 @@ function App() {
 
   return (
     <div>
+       <Navbar /> 
+    {user && (
+      <div className="welcome-banner">
+        👋 Welcome, {user}!
+      </div>
+    )}
+
+
       {!user ? (
         <Login onLogin={setUser} />
       ) : (
