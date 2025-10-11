@@ -13,6 +13,7 @@ function App() {
   const [courses, setCourses] = useState([]);
   const [skillOptions, setSkillOptions] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
 
 
   useEffect(() => {
@@ -72,12 +73,12 @@ function App() {
 
   return (
     <div>
-       <Navbar /> 
-    {user && (
-      <div className="welcome-banner">
-        👋 Welcome, {user}!
-      </div>
-    )}
+     <Navbar setActiveSection={setActiveSection} />
+      {user && (
+        <div className="welcome-banner">
+          👋 Welcome, {user}!
+        </div>
+      )}
 
 
       {!user ? (
@@ -117,8 +118,26 @@ function App() {
                 ))}
               </div>
             </div>)}
+
+          {activeSection === "about" && (
+            <div id="about" className="section">
+              <h2>About</h2>
+              <p>CourseRec is a smart course recommendation platform designed to help students discover the most relevant and valuable courses based on their skill interests and academic semester. Built with React and Firebase, it offers a fast, intuitive interface and personalized suggestions to support informed decision-making. Whether you're exploring new domains or planning your next semester, CourseRec makes it easy to find the right learning path</p>
+            </div>
+          )}
+
+          {activeSection === "contact" && (
+            <div id="contact" className="section">
+              <h2>Contact</h2>
+              <p>   Have questions or feedback? Reach out at : 
+            <a href="mailto:sajidsidd30@gmail.com">sajidsidd30@gmail.com</a>
+</p>
+            </div>
+          )}
         </>
       )}
+
+
     </div>
 
   );
